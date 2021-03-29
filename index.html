@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/brand.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!--link rel="stylesheet" href="css/bootstrap-dark.min.css"-->
+
+    <title>Filmes indicados ao Oscar 2021</title>
+
+    <style>
+
+        .btn-outline-secondary{
+            background-color: #FFF;
+        }
+
+        .checkConteiner {
+            margin-right: 3px;
+        }
+
+        .checkConteiner::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            right: -21px;
+            top: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 100%);
+        }
+    
+        .through{
+            color: rgba(0, 0, 0, .6);
+            text-decoration: line-through;
+        }
+    
+        .through .fw-bold {
+            font-weight: 400 !important;
+        }
+
+        .watched{
+            color: rgba(0, 0, 0, .3);
+        }
+    
+        .overflow {
+            white-space: nowrap;
+            overflow: hidden;
+            overflow-x: auto;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .overflow::-webkit-scrollbar {
+            display: none;
+        }
+    
+        .overflow small {
+            color: darkgray;
+        }
+    
+        .stream {
+            position: relative;
+            content: "";
+        }
+    
+        .stream::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .stream i{
+            width: 15px;
+        }
+
+        /*
+        .netflix {
+            color: #E50914;
+        }
+
+        .google-play {
+            color: #4285F4;
+        }
+
+        .amazon {
+            color: rgb(0,168,225);
+        }
+
+        .vimeo{
+            color: #19B7EA;
+        }
+
+        .youtube{
+            color: #FF0000;
+        }
+
+        .globo{
+            color: #fb0234;
+        }
+
+        .disney{
+            color: #101c50;
+        }
+        */
+        .pirate{
+            /* color: #906445; */
+            font-size: 18px;
+        }
+    
+        .list-group-item,
+        .overflow {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color:#FFF;
+            z-index: 9999;
+        }
+
+        #typeViewSelector{
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+        }
+
+        #typeViewcontainer{
+            display: block;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="loading d-none">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="spinner-border m-5" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <i class="icon-oscar me-2"></i>
+                    <span>2021</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <main>
+
+        </main>
+
+        <footer class="mt-5">
+            <p>&nbsp;</p>
+        </footer>
+
+    </div>
+
+    <div id="typeViewSelector" class="position-fixed bottom-0 w-100 py-4">
+        <div id="typeViewcontainer">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="typeView" id="viewCategorys" value="categorys" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary" for="viewCategorys">Categorias</label>
+                <input type="radio" class="btn-check" name="typeView" id="viewMovies" value="movies" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="viewMovies">Filmes</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 start-50 mt-2 translate-middle-x">
+        <div id="toast-copy" class="toast align-items-center text-white bg-primary border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+
+
+    <script type="text/javascript">
+
+        $.mobile.autoInitializePage = false;
+
+        /* Save state*/
+        $(window).bind('unload', function () {
+            $('input').each(function () {
+                localStorage.setItem($(this).attr('id'), JSON.stringify({ checked: this.checked }));
+            });
+        });
+
+        /* Get data */
+
+        var requestURL = 'https://api.jsonbin.io/b/605e875f9ab74a5f2bcc7762/5';
+        var request = new XMLHttpRequest();
+
+        request.onprogress = function (e) {
+            if (e.lengthComputable) {
+                console.log(e.loaded + " / " + e.total)
+            }
+        }
+        request.onloadstart = function (e) {
+            $(".loading").removeClass("d-none").addClass("d-block");
+        }
+
+        request.onload = function () {
+            if (request.status != 200) {
+                document.getElementById("demo").innerHTML = 'Refresh...';
+                console.log("** An error occurred during the transaction");
+            } else {
+                $(".loading").removeClass("d-block").addClass("d-none");
+            }
+        }
+        request.onerror = function () {
+            document.getElementById("demo").innerHTML = 'Refresh...';
+            console.log("** An error occurred during the transaction");
+        };
+
+        request.onloadend = function () {
+            var categorys = request.response;
+
+            // Show content
+            showCategorys(categorys);
+            showMovieNominated(categorys);
+
+            // Copy movie name
+            $(".list-group-item").on("taphold", function () {
+                copyToClipboard($(this));
+                var copiedText = $(this).find(".fw-bold").text();
+                $("#toast-copy .toast-body").text('Nome do filme copiado: "' + copiedText +'"');
+                $("#toast-copy").toast('show');
+                //console.log(copiedText);
+            });
+
+            // Select same name movie
+            $('input[type="checkbox"]').on('change', function () {
+                var valueCheck = $(this).attr("value");
+                var targetCheck = "input[value=" + $(this).attr("value") + "]";
+                $(targetCheck).prop('checked', this.checked);
+
+                // Strikethrough movie name watched
+                if ($(targetCheck).is(':checked')) {
+                    $(targetCheck)
+                        .closest(".list-group-item")
+                        .addClass('watched')
+                        .find(".overflow")
+                        .addClass('through');
+                }else{
+                    $(targetCheck)
+                        .closest(".list-group-item")
+                        .removeClass('watched')
+                        .find(".overflow")
+                        .removeClass('through');
+                };
+
+                //console.log(targetCheck);
+            });
+
+            $('#viewCategorys').on('change', function () {
+                $('#categorys').show();
+                $('#movies').hide();    
+            });
+
+            $('#viewMovies').on('change', function () {
+                $('#categorys').hide();
+                $('#movies').show();
+            });
+
+            $('input[name="typeView"]').on('click', function () {
+                $('html').animate({ scrollTop: 0 }, 0);
+            });
+
+            // Init function
+            stateSaved();
+            deselectableRadios();
+            
+        };
+
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        var header = document.querySelector('header');
+        var section = document.querySelector('main');
+
+        function showCategorys(jsonObj) {
+            var categorys = jsonObj['categorys'];
+            var moviesNames = [];
+            
+            var categorysSection = document.createElement('section');
+            //categorysSection.className = "collapse multi-collapse";
+            categorysSection.id = "categorys";
+            section.appendChild(categorysSection);
+
+            var categorysTitle = document.createElement('h1');
+            categorysTitle.className = "mt-4 mb-4";
+            categorysTitle.textContent = "Categorias";
+            categorysSection.appendChild(categorysTitle);
+
+            for (var i = 0; i < categorys.length; i++) {
+
+                var categoryTitle = categorys[i].title;
+
+                var categorySection = document.createElement('section');
+                var categorysTitles = document.createElement('h3');
+                var categoryListGroup = document.createElement('div');
+                var categoryList = document.createElement('ul');
+
+                categorysTitles.className = "my-4";
+                categoryListGroup.className = "list-group shadow-lg mb-5";
+                categoryList.className = "list-group";
+
+                categorysTitles.textContent = categoryTitle;
+
+                var nominees = categorys[i].nominees;
+
+                for (var j = 0; j < nominees.length; j++) {
+
+                    var movieName = nominees[j].movie;
+                    var movieSpecificity = nominees[j].specificity;
+                    var movieStream = nominees[j].stream;
+
+                    var movieNameForSlug = slugify(movieName, "-");
+                    var categoryNameForSlug = slugify(categoryTitle, "-");
+
+                    var listItem = document.createElement('li');
+                    listItem.className = "list-group-item d-flex align-items-center";
+                    categoryList.appendChild(listItem);
+
+                    var favConteiner = document.createElement('div');
+                    favConteiner.className = "pretty p-icon p-toggle p-plain";
+                    listItem.appendChild(favConteiner);
+
+                    var favRadio = document.createElement('input');
+                    favRadio.setAttribute("type", "radio");
+                    favRadio.setAttribute("name", "category-" + categoryNameForSlug);
+                    favRadio.id = categoryNameForSlug + "-favorite-" + movieNameForSlug;
+                    favConteiner.appendChild(favRadio);
+
+                    var favIconOn = document.createElement('div');
+                    favIconOn.className = "state p-on";
+                    favConteiner.appendChild(favIconOn);
+
+                    var favOn = document.createElement('i');
+                    favOn.className = "icon bi-trophy-fill";
+                    favIconOn.appendChild(favOn);
+
+                    var favOnLabel = document.createElement('label');
+                    favIconOn.appendChild(favOnLabel);
+
+                    var favIconOff = document.createElement('div');
+                    favIconOff.className = "state p-off";
+                    favConteiner.appendChild(favIconOff);
+
+                    var favOff = document.createElement('i');
+                    favOff.className = "icon bi-trophy";
+                    favIconOff.appendChild(favOff);
+
+                    var favOffLabel = document.createElement('label');
+                    favIconOff.appendChild(favOffLabel);
+
+                    var checkConteiner = document.createElement('div');
+                    checkConteiner.className = "checkConteiner pretty p-icon p-round p-bigger";
+                    listItem.appendChild(checkConteiner);
+
+                    var checkBox = document.createElement('input');
+                    checkBox.setAttribute("type", "checkbox");
+                    checkBox.setAttribute("name", movieNameForSlug);
+                    checkBox.setAttribute("value", movieNameForSlug);
+                    checkBox.id = categoryNameForSlug + "-watched-" + movieNameForSlug;
+                    checkConteiner.appendChild(checkBox);
+
+                    var checkIcon = document.createElement('div');
+                    checkIcon.className = "state";
+                    checkConteiner.appendChild(checkIcon);
+
+                    var checkIconI = document.createElement('i');
+                    checkIconI.className = "icon bi-check";
+                    checkIcon.appendChild(checkIconI);
+
+                    var checkLabel = document.createElement('label');
+                    checkIcon.appendChild(checkLabel);
+
+                    var movieNameConteiner = document.createElement('label');
+                    movieNameConteiner.className = "form-check-label overflow";
+                    movieNameConteiner.setAttribute("for", categoryNameForSlug + "-watched-" + movieNameForSlug);
+                    listItem.appendChild(movieNameConteiner);
+
+                    var mainName = document.createElement('span');
+                    mainName.className = "fw-bold";
+                    movieNameConteiner.appendChild(mainName);
+                    var asideName = document.createElement('small');
+
+                    categoryTitleStringify = JSON.stringify(categoryTitle);
+
+                    if (!(movieSpecificity === "null" || movieSpecificity == null)) {
+
+                        if (categoryTitle === "Melhor Filme Internacional" || categoryTitle === "Melhor Roteiro Original" || categoryTitle === "Melhor Roteiro Adaptado" || categoryTitle === "Melhor Fotografia" || categoryTitle === "Melhor Trilha Sonora" || categoryTitle === "Melhor Canção Original") {
+                            mainName.textContent = movieName;
+                            asideName.textContent = " • " + movieSpecificity;
+                            movieNameConteiner.appendChild(asideName);
+                            //console.log("a");
+                        } else {
+                            mainName.textContent = movieSpecificity;
+                            asideName.textContent = " • " + movieName;
+                            movieNameConteiner.appendChild(asideName);
+                            //console.log("b");
+                        }
+
+                    } else{
+                        mainName.textContent = movieName;
+                        //console.log("c");
+                    }
+
+                    //console.log(categoryTitle);
+
+                    movieStreamStringify = JSON.stringify(movieStream);
+                    //console.log(movieStream);
+
+                    var stream = document.createElement('div');
+                    stream.className = "stream ms-auto d-flex align-items-center";
+                    listItem.appendChild(stream);
+
+                    var streamIcon = document.createElement('i');
+
+                    if (movieStream === "null" || movieStream == null) {
+                    streamIcon.className = "icon-pirate pirate";
+                    //console.log("Null");
+                } else if (movieStream == "Cinema") {
+                    streamIcon.className = "icon-ticket ticket";
+                    //console.log("Cinema");
+                } else if (movieStream == "Globoplay") {
+                    streamIcon.className = "icon-globo globo";
+                    //console.log("Cinema");
+                } else if (movieStream == "Disney+") {
+                    streamIcon.className = "icon-disney disney";
+                    //console.log("Cinema");
+                } else {
+                    var streamSlug = slugify(movieStream, "-");
+                    streamIcon.className = "cib-" + streamSlug + " " + streamSlug;
+                }
+                    
+                    stream.appendChild(streamIcon);
+
+                    //console.log("Movie: " + movieName + ", Specificity: " + movieSpecificity + ", Stream: " + movieStream);
+
+                    moviesNames.push({
+                        movie: movieName,
+                        stream: movieStream
+                    });
+                }
+
+                categorySection.appendChild(categorysTitles);
+                categorySection.appendChild(categoryListGroup);
+                categoryListGroup.appendChild(categoryList);
+                categorysSection.appendChild(categorySection);
+            }
+            
+        }
+
+        function showMovieNominated(jsonObj) {
+            var categorys = jsonObj['categorys'];
+            var moviesNames = [];
+
+            var moviesSection = document.createElement('section');
+            //moviesSection.className = "collapse multi-collapse";
+            moviesSection.id = "movies";
+            section.appendChild(moviesSection);
+
+            var moviesTitle = document.createElement('h1');
+            moviesTitle.className = "mt-4 mb-4";
+            moviesTitle.textContent = "Filmes indicados";
+            moviesSection.appendChild(moviesTitle);
+
+            for (var i = 0; i < categorys.length; i++) {
+
+                var nominees = categorys[i].nominees;
+
+                for (var j = 0; j < nominees.length; j++) {
+
+                    var movieName = nominees[j].movie;
+                    var movieSpecificity = nominees[j].specificity;
+                    var movieStream = nominees[j].stream;
+
+                    moviesNames.push({
+                        movie: movieName,
+                        stream: movieStream
+                    });
+                }
+
+            }
+            //console.log(moviesNames);
+
+            // Categories which movie was nominated
+            var categoriesMovieNominated = compressArray(moviesNames);
+            //console.log(categoriesMovieNominated);
+
+            // Unique movie was nominated
+            moviesNominations = categoriesMovieNominated.map(JSON.stringify).reverse() // convert to JSON string the array content, then reverse it (to check from end to begining)
+                .filter(function (item, index, categoriesMovieNominated) { return categoriesMovieNominated.indexOf(item, index + 1) === -1; }) // check if there is any occurence of the item in whole array
+                .reverse().map(JSON.parse) // revert it to original state
+                //console.log(moviesNominations);
+
+            /*
+            moviesNominations.sort(function (x, y) {
+                let a = x.movie.toUpperCase(),
+                    b = y.movie.toUpperCase();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            */
+            
+            moviesNominations.sort(function (x, y) {
+                return  y.nominations - x.nominations;
+            });
+
+            //console.log(moviesNominations);
+
+            var categorySection = document.createElement('section');
+            var categoryListGroup = document.createElement('div');
+            var categoryList = document.createElement('ul');
+
+            categoryListGroup.className = "list-group shadow-lg mb-5";
+            categoryList.className = "list-group";
+
+            for (var j = 0; j < moviesNominations.length; j++) {
+
+                var nominationsNumber = moviesNominations[j].nominations;
+                var movieName = moviesNominations[j].movie;
+                var movieStream = moviesNominations[j].stream;
+
+                var movieNameForSlug = slugify(movieName, "-");
+
+                var listItem = document.createElement('li');
+                listItem.className = "list-group-item d-flex align-items-center";
+                categoryList.appendChild(listItem);
+
+                var pillNominationsNumber = document.createElement('span');
+                pillNominationsNumber.className = "badge bg-secondary rounded-pill me-2";
+                pillNominationsNumber.textContent = nominationsNumber;
+                listItem.appendChild(pillNominationsNumber);
+
+                var checkConteiner = document.createElement('div');
+                checkConteiner.className = "checkConteiner pretty p-icon p-round p-bigger";
+                listItem.appendChild(checkConteiner);
+
+                var checkBox = document.createElement('input');
+                checkBox.setAttribute("type", "checkbox");
+                checkBox.setAttribute("name", movieNameForSlug);
+                checkBox.setAttribute("value", movieNameForSlug);
+                checkBox.id = "watched-" + movieNameForSlug;
+                checkConteiner.appendChild(checkBox);
+
+                var checkIcon = document.createElement('div');
+                checkIcon.className = "state";
+                checkConteiner.appendChild(checkIcon);
+
+                var checkIconI = document.createElement('i');
+                checkIconI.className = "icon bi-check";
+                checkIcon.appendChild(checkIconI);
+
+                var checkLabel = document.createElement('label');
+                checkIcon.appendChild(checkLabel);
+
+                var movieNameConteiner = document.createElement('label');
+                movieNameConteiner.className = "form-check-label overflow";
+                movieNameConteiner.setAttribute("for", "watched-" + movieNameForSlug);
+                listItem.appendChild(movieNameConteiner);
+
+                var mainName = document.createElement('span');
+                mainName.className = "fw-bold";
+                mainName.textContent = movieName;
+                movieNameConteiner.appendChild(mainName);
+
+                 movieStreamStringify = JSON.stringify(movieStream);
+                //console.log(movieStream);
+
+                var stream = document.createElement('div');
+                stream.className = "stream ms-auto d-flex align-items-center";
+                listItem.appendChild(stream);
+
+                var streamIcon = document.createElement('i');
+
+                if (movieStream === "null" || movieStream == null) {
+                    streamIcon.className = "icon-pirate pirate";
+                    //console.log("Null");
+                } else if (movieStream == "Cinema") {
+                    streamIcon.className = "icon-ticket ticket";
+                    //console.log("Cinema");
+                } else if (movieStream == "Globoplay") {
+                    streamIcon.className = "icon-globo globo";
+                    //console.log("Cinema");
+                } else if (movieStream == "Disney+") {
+                    streamIcon.className = "icon-disney disney";
+                    //console.log("Cinema");
+                } else {
+                    var streamSlug = slugify(movieStream, "-");
+                    streamIcon.className = "cib-" + streamSlug + " " + streamSlug;
+                }
+
+                stream.appendChild(streamIcon);
+
+            }
+
+            categorySection.appendChild(categoryListGroup);
+            categoryListGroup.appendChild(categoryList);
+            moviesSection.appendChild(categorySection);
+            
+        }
+
+        /* Saved state*/
+        function stateSaved() {
+            $('input').each(function () {
+                var state = JSON.parse(localStorage.getItem($(this).attr('id')));
+                if (state) this.checked = state.checked;
+            });
+
+            $('input[type=checkbox]:checked').each(function () {
+                $(this)
+                    .closest(".list-group-item")
+                    .addClass('watched')
+                    .find(".overflow")
+                    .addClass('through');
+            });
+
+            $('#viewCategorys:checked').each(function () {
+                $('#categorys').show();
+                $('#movies').hide();
+            });
+
+            $('#viewMovies:checked').each(function () {
+                $('#movies').show();
+                $('#categorys').hide();
+            });
+
+        }
+
+        /* Deselectable Radios */
+        function deselectableRadios(rootElement) {
+            if (!rootElement) rootElement = document;
+            if (!window.radioChecked) window.radioChecked = null;
+
+            window.radioClick = function (e) {
+                const obj = e.target;
+                if (e.keyCode) return obj.checked = e.keyCode != 32;
+                obj.checked = window.radioChecked != obj;
+                window.radioChecked = obj.checked ? obj : null;
+            }
+
+            rootElement.querySelectorAll("input[type='radio']").forEach(radio => {
+                radio.setAttribute("onclick", "radioClick(event)");
+                radio.setAttribute("onkeyup", "radioClick(event)");
+            });
+        }
+
+        /* Slug */
+        function slugify(text, separator) {
+            text = text.toString().toLowerCase().trim()
+
+            const sets = [
+                { to: "a", from: "[ÀÁÂÃÅÆĀĂĄẠẢẤẦẨẪẬẮẰẲẴẶΑΆ]" },
+                { to: "b", from: "[Β]" },
+                { to: "ae", from: "[Ä]" },
+                { to: "c", from: "[ÇĆĈČ]" },
+                { to: "d", from: "[ÐĎĐÞΔ]" },
+                { to: "e", from: "[ÈÉÊËĒĔĖĘĚẸẺẼẾỀỂỄỆΕΈ]" },
+                { to: "f", from: "[Φ]" },
+                { to: "g", from: "[ĜĞĢǴΓ]" },
+                { to: "h", from: "[ĤḦ]" },
+                { to: "i", from: "[ÌÍÎÏĨĪĮİỈỊΗΉΙΊΪΐ]" },
+                { to: "j", from: "[Ĵ]" },
+                { to: "ij", from: "[Ĳ]" },
+                { to: "k", from: "[ĶΚ]" },
+                { to: "ks", from: "[Ξ]" },
+                { to: "l", from: "[ĹĻĽŁΛ]" },
+                { to: "m", from: "[ḾΜ]" },
+                { to: "n", from: "[ÑŃŅŇΝ]" },
+                { to: "o", from: "[ÒÓÔÕØŌŎŐỌỎỐỒỔỖỘỚỜỞỠỢǪǬƠΟΌΩΏ]" },
+                { to: "oe", from: "[ŒÖ]" },
+                { to: "p", from: "[ṕΠ]" },
+                { to: "ps", from: "[Ψ]" },
+                { to: "r", from: "[ŔŖŘΡ]" },
+                { to: "s", from: "[ŚŜŞŠΣς]" },
+                { to: "ss", from: "[ß]" },
+                { to: "t", from: "[ŢŤΤ]" },
+                { to: "th", from: "[Θ]" },
+                { to: "u", from: "[ÙÚÛŨŪŬŮŰŲỤỦỨỪỬỮỰƯΥΎΫΰ]" },
+                { to: "ue", from: "[Ü]" },
+                { to: "w", from: "[ẂŴẀẄ]" },
+                { to: "x", from: "[ẍΧ]" },
+                { to: "y", from: "[ÝŶŸỲỴỶỸ]" },
+                { to: "z", from: "[ŹŻŽΖ]" },
+                { to: "-", from: "[·/_,:;']" },
+            ]
+
+            sets.forEach((set) => {
+                text = text.replace(new RegExp(set.from, "gi"), set.to)
+            })
+
+            text = text
+                .toString()
+                .toLowerCase()
+                .replace(/\s+/g, "-") // Replace spaces with -
+                .replace(/&/g, "-and-") // Replace & with 'and'
+                .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+                .replace(/\--+/g, "-") // Replace multiple - with single -
+                .replace(/^-+/, "") // Trim - from start of text
+                .replace(/-+$/, "") // Trim - from end of text
+
+            if (typeof separator !== "undefined" && separator !== "-") {
+                text = text.replace(/-/g, separator)
+            }
+
+            return text
+        }
+
+        /* Copy */
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+
+        /* You have a javascript array that likely has some Count duplicate values  */
+        function compressArray(original) {
+
+            var compressed = [];
+            // make a copy of the input array
+            var copy = original.slice(0);
+
+
+            // first loop goes over every element
+            for (var i = 0; i < original.length; i++) {
+
+                var myCount = 0;
+                
+                // loop over every element in the copy and see if it's the same
+                for (var w = 0; w < copy.length; w++) {
+                    if (original[i].movie == copy[w].movie) {
+                        // increase amount of times duplicate is found
+                        myCount++;
+
+                        // sets item to undefined
+                        //delete copy[w].movie;
+                    }
+                }
+
+                if (myCount > 0) {
+                    var a = new Object();
+                    a.movie = original[i].movie;
+                    a.stream = original[i].stream;
+                    a.nominations = myCount;
+                    compressed.push(a);
+                }
+            }
+
+            return compressed;
+        };
+
+    </script>
+
+</body>
+
+</html>

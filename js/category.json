@@ -1,0 +1,709 @@
+{
+    "categorys": [
+        {
+            "title": "Melhor Filme",
+            "nominees": [
+                {
+                    "movie": "Bela Vingança",
+                    "specificity": null,
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": null,
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": null,
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Meu Pai",
+                    "specificity": null,
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": null,
+                    "stream": null
+                },
+                {
+                    "movie": "Nomadland",
+                    "specificity": null,
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": null,
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": null,
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Direção",
+            "nominees": [
+                {
+                    "movie": "Nomadland",
+                    "specificity": "Chloé Zhao",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "David Fincher",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Bela Vingança",
+                    "specificity": "Emerald Fennell",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": "Lee Isaac Chung",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Druk",
+                    "specificity": "Thomas Vinterberg",
+                    "stream": "Google Play"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Atriz",
+            "nominees": [
+                {
+                    "movie": "Estados Unidos vs. Billie Holiday",
+                    "specificity": "Andra Day",
+                    "stream": "NetFlix"
+                },
+                {
+                    "movie": "Bela Vingança",
+                    "specificity": "Carey Mulligan",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Nomadland",
+                    "specificity": "Frances McDormand",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Pieces of a Woman",
+                    "specificity": "Vanessa Kirby",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "A Voz Suprema do Blues",
+                    "specificity": "Viola Davis",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Ator",
+            "nominees": [
+                {
+                    "movie": "Meu Pai",
+                    "specificity": "Anthony Hopkins",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "A Voz Suprema do Blues",
+                    "specificity": "Chadwick Boseman",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "Gary Oldman",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": "Riz Ahmed",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": "Steven Yeun",
+                    "stream": "null"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Atriz Coadjuvante",
+            "nominees": [
+                {
+                    "movie": "Mank",
+                    "specificity": "Amanda Seyfried",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Era uma Vez um Sonho",
+                    "specificity": "Glenn Close",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Borat: Fita de Cinema Seguinte",
+                    "specificity": "Maria Bakalova",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Meu Pai",
+                    "specificity": "Olivia Colman",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": "Yuh-Jung Youn",
+                    "stream": "null"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Ator Coadjuvante",
+            "nominees": [
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": "Daniel Kaluuya",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": "Lakeith Stanfield",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Uma Noite em Miami",
+                    "specificity": "Leslie Odom Jr.",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": "Paul Raci",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": "Sacha Baron Cohen",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Animação",
+            "nominees": [
+                {
+                    "movie": "A Caminho da Lua",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Dois Irmãos",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "Shaun, o Carneiro: O Filme",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Soul",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "Wolfwalkers",
+                    "specificity": "null",
+                    "stream": "Apple"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Filme Internacional",
+            "nominees": [
+                {
+                    "movie": "Better Days",
+                    "specificity": "Hong Kong",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Collective",
+                    "specificity": "Romênia",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Druk",
+                    "specificity": "Dinamarca",
+                    "stream": "Google Play"
+                },
+                {
+                    "movie": "O Homem que Vendeu Sua Pele",
+                    "specificity": "Tunísia",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Quo Vadis, Aida?",
+                    "specificity": "Bósnia",
+                    "stream": "null"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Documentário",
+            "nominees": [
+                {
+                    "movie": "Agente Duplo",
+                    "specificity": "null",
+                    "stream": "Globoplay"
+                },
+                {
+                    "movie": "Collective",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Crip Camp",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Professor Polvo",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Time",
+                    "specificity": "null",
+                    "stream": "Amazon"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Roteiro Original",
+            "nominees": [
+                {
+                    "movie": "Bela Vingança",
+                    "specificity": "Emerald Fennell",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": "Will Berson e Shaka King",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": "Lee Isaac Chung",
+                    "stream": "null"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": "Darius Marder e Abraham Marder",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": "Aaron Sorkin",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Roteiro Adaptado",
+            "nominees": [
+                {
+                    "movie": "Borat: Fita de Cinema Seguinte",
+                    "specificity": "Sacha Baron Cohen + 7",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Meu Pai",
+                    "specificity": "Christopher Hampton e Florian Zeller",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Nomadland",
+                    "specificity": "Chloé Zhao",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "O Tigre Branco",
+                    "specificity": "Ramin Bahrani",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Uma Noite em Miami",
+                    "specificity": "Kemp Powers",
+                    "stream": "Amazon"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Fotografia",
+            "nominees": [
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": "Sean Bobbitt",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "Erik Messerschmidt",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Nomadland",
+                    "specificity": "Joshua James Richards",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": "Phedon Papamichael",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Relatos do Mundo",
+                    "specificity": "Dariusz Wolski",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Design de Produção",
+            "nominees": [
+                {
+                    "movie": "A Voz Suprema do Blues",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Meu Pai",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Relatos do Mundo",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Tenet",
+                    "specificity": "null",
+                    "stream": "Google Play"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Montagem",
+            "nominees": [
+                {
+                    "movie": "Bela Vingança",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Meu Pai",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Nomadland",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": "null",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhores Efeitos Visuais",
+            "nominees": [
+                {
+                    "movie": "Love and Monsters",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Mulan",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "O Céu da Meia-Noite",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "O Grande Ivan",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "Tenet",
+                    "specificity": "null",
+                    "stream": "Google Play"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Figurino",
+            "nominees": [
+                {
+                    "movie": "A Voz Suprema do Blues",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Emma",
+                    "specificity": "null",
+                    "stream": "Google Play"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Mulan",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "Pinóquio",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Maquiagem e Cabelo",
+            "nominees": [
+                {
+                    "movie": "A Voz Suprema do Blues",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Emma",
+                    "specificity": "null",
+                    "stream": "Google Play"
+                },
+                {
+                    "movie": "Era uma Vez um Sonho",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Pinóquio",
+                    "specificity": "null",
+                    "stream": "Cinema"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Som",
+            "nominees": [
+                {
+                    "movie": "Greyhound",
+                    "specificity": "null",
+                    "stream": "Apple"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "O Som do Silêncio",
+                    "specificity": "null",
+                    "stream": "Amazon"
+                },
+                {
+                    "movie": "Relatos do Mundo",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Soul",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Trilha Sonora",
+            "nominees": [
+                {
+                    "movie": "Destacamento Blood",
+                    "specificity": "Terence Blanchard",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Mank",
+                    "specificity": "Trent Reznor e Atticus Ross",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Minari",
+                    "specificity": "Emile Mosseri",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Relatos do Mundo",
+                    "specificity": "James Newton Howard",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Soul",
+                    "specificity": "Trent Reznor, Atticus Ross e Jon Batiste",
+                    "stream": "Disney+"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Canção Original",
+            "nominees": [
+                {
+                    "movie": "Eurovision",
+                    "specificity": "Husavik",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Judas e o Messias Negro",
+                    "specificity": "Fight for You",
+                    "stream": "Cinema"
+                },
+                {
+                    "movie": "Os 7 de Chicago",
+                    "specificity": "Hear my Voice",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Rosa e Momo",
+                    "specificity": "Io Sí",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Uma Noite em Miami",
+                    "specificity": "“Speak Now\"",
+                    "stream": "Amazon"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Documentário em Curta-Metragem",
+            "nominees": [
+                {
+                    "movie": "A Concerto is a Conversation",
+                    "specificity": "null",
+                    "stream": "Youtube"
+                },
+                {
+                    "movie": "Collete",
+                    "specificity": "null",
+                    "stream": "Youtube"
+                },
+                {
+                    "movie": "Do Not Split",
+                    "specificity": "null",
+                    "stream": "Vimeo"
+                },
+                {
+                    "movie": "Hunger Ward",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Uma canção para Latasha",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Curta-Metragem",
+            "nominees": [
+                {
+                    "movie": "Feeling Through",
+                    "specificity": "null",
+                    "stream": "Youtube"
+                },
+                {
+                    "movie": "The Letter Room",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "The Present",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Two Distant Strangers",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "White Eye",
+                    "specificity": "null",
+                    "stream": "null"
+                }
+            ]
+        },
+        {
+            "title": "Melhor Animação em Curta-Metragem",
+            "nominees": [
+                {
+                    "movie": "Genius Loci",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Opera",
+                    "specificity": "null",
+                    "stream": "null"
+                },
+                {
+                    "movie": "Se algo acontecer... Te amo",
+                    "specificity": "null",
+                    "stream": "Netflix"
+                },
+                {
+                    "movie": "Toca",
+                    "specificity": "null",
+                    "stream": "Disney+"
+                },
+                {
+                    "movie": "Yes-People",
+                    "specificity": "null",
+                    "stream": "Vimeo"
+                }
+            ]
+        }
+    ]
+}

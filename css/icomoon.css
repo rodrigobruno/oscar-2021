@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ej0u0y');
+  src:  url('../fonts/icomoon.eot?ej0u0y#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ej0u0y') format('truetype'),
+    url('../fonts/icomoon.woff?ej0u0y') format('woff'),
+    url('../fonts/icomoon.svg?ej0u0y#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ticket:before {
+  content: "\e906";
+}
+.icon-trophy-fill:before {
+  content: "\e903";
+}
+.icon-oscar:before {
+  content: "\e904";
+}
+.icon-trophy:before {
+  content: "\e905";
+}
+.icon-pirate:before {
+  content: "\e902";
+}
+.icon-globo:before {
+  content: "\e900";
+}
+.icon-disney:before {
+  content: "\e901";
+}
