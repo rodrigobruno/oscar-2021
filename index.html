@@ -478,30 +478,29 @@
                     var streamIcon = document.createElement('i');
 
                     if (movieStream === "null" || movieStream == null) {
-                    streamIcon.className = "icon-pirate pirate";
-                    //console.log("Null");
-                } else if (movieStream == "Cinema") {
-                    streamIcon.className = "icon-ticket ticket";
-                    //console.log("Cinema");
-                } else if (movieStream == "Globoplay") {
-                    streamIcon.className = "icon-globo globo";
-                    //console.log("Cinema");
-                } else if (movieStream == "Disney+") {
-                    streamIcon.className = "icon-disney disney";
-                    //console.log("Cinema");
-                } else {
-                    var streamSlug = slugify(movieStream, "-");
-                    streamIcon.className = "cib-" + streamSlug + " " + streamSlug;
-                }
+                        streamIcon.className = "icon-pirate pirate";
+                        //console.log("Null");
+                    } else if (movieStream == "Cinema") {
+                        streamIcon.className = "icon-ticket ticket";
+                        //console.log("Cinema");
+                    } else if (movieStream == "Globoplay") {
+                        streamIcon.className = "icon-globo globo";
+                        //console.log("Cinema");
+                    } else if (movieStream == "Disney+") {
+                        streamIcon.className = "icon-disney disney";
+                        //console.log("Cinema");
+                    } else {
+                     var streamSlug = slugify(movieStream, "-");
+                        streamIcon.className = "cib-" + streamSlug + " " + streamSlug;
+                    }
                     
                     stream.appendChild(streamIcon);
-
-                    //console.log("Movie: " + movieName + ", Specificity: " + movieSpecificity + ", Stream: " + movieStream);
 
                     moviesNames.push({
                         movie: movieName,
                         stream: movieStream
                     });
+
                 }
 
                 categorySection.appendChild(categorysTitles);
@@ -509,12 +508,15 @@
                 categoryListGroup.appendChild(categoryList);
                 categorysSection.appendChild(categorySection);
             }
+
+            //console.log(moviesNames);
             
         }
 
         function showMovieNominated(jsonObj) {
             var categorys = jsonObj['categorys'];
             var moviesNames = [];
+            //console.log(moviesNames);
 
             var moviesSection = document.createElement('section');
             //moviesSection.className = "collapse multi-collapse";
@@ -553,20 +555,8 @@
             moviesNominations = categoriesMovieNominated.map(JSON.stringify).reverse() // convert to JSON string the array content, then reverse it (to check from end to begining)
                 .filter(function (item, index, categoriesMovieNominated) { return categoriesMovieNominated.indexOf(item, index + 1) === -1; }) // check if there is any occurence of the item in whole array
                 .reverse().map(JSON.parse) // revert it to original state
-                //console.log(moviesNominations);
-
-            /*
-            moviesNominations.sort(function (x, y) {
-                let a = x.movie.toUpperCase(),
-                    b = y.movie.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
-            });
-            */
             
-            moviesNominations.sort(function (x, y) {
-                return  y.nominations - x.nominations;
-            });
-
+            moviesNominations.splice(8, 1);
             //console.log(moviesNominations);
 
             var categorySection = document.createElement('section');
@@ -652,6 +642,8 @@
                 }
 
                 stream.appendChild(streamIcon);
+
+                //console.log(movieName);
 
             }
 
@@ -811,6 +803,13 @@
 
             return compressed;
         };
+
+        function removeElement(array, elem) {
+            var index = array.indexOf(elem);
+            if (index > -1) {
+                array.splice(index, 1);
+            }
+        }
 
     </script>
 
