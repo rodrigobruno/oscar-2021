@@ -560,7 +560,14 @@
                 .filter(function (item, index, categoriesMovieNominated) { return categoriesMovieNominated.indexOf(item, index + 1) === -1; }) // check if there is any occurence of the item in whole array
                 .reverse().map(JSON.parse) // revert it to original state
             
+            // Remove repeat item "Minari"
             moviesNominations.splice(8, 1);
+
+            // Sort by nominations
+            moviesNominations.sort(function (x, y) {
+                return y.nominations - x.nominations;
+            });
+
             //console.log(moviesNominations);
 
             var categorySection = document.createElement('section');
